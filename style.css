@@ -8,6 +8,14 @@
     font-family: 'Poppins', sans-serif;
 }
 
+:root
+{
+    --black: #333;
+    --black2: #333;
+    --white: #fff;
+    --white2: #fff;
+    --yellow: #FFBA5C;
+}
 section
 {
     position: relative;
@@ -17,7 +25,7 @@ section
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #fff;
+    background: var(white);
 }
 
 header
@@ -44,6 +52,7 @@ header  ul
     display: flex;
 }
 
+
 header ul li
 {
     list-style: none; 
@@ -53,9 +62,9 @@ header ul li
 header ul li a
 {
     display: inline-block;
-    color: #47525E;
-    font-weight: 400;
-    margin-left: 40px;
+    color: var(--black);
+    font-weight: 600;
+    margin-right: 70px;
     text-decoration: none;
 }
 
@@ -72,27 +81,29 @@ header ul li a
 {
     position: relative;
     max-width: 600px;
+    z-index: 2;
+    margin-right: 20px;
     color: black;
 }
 
 .content .textBox h2
 {
-    color: #47525E;
-    font-size : 4em;
-    line-height: 1.4em;
-    font-weight: 500;
+    color: var(--black);
+    font-size : 3em;
+    line-height: 1.2em;
+    font-weight: 700;
+    margin-bottom: 10px;
 }
 
 .content .textBox h2 span
 {
-    color: #FFBA5C;
+    color: var(--yellow);
     font-size: 1.4em;
-    font-weight: 900;
 }
 
 .content .textBox p
 {
-    color: #47525E;
+    color: var(--black);
 }
 
 .content .textBox a
@@ -100,8 +111,8 @@ header ul li a
     display: inline-block;
     margin-top: 20px;
     padding: 8px 20px;
-    background: #FFBA5C;
-    color: #fff;
+    background: var(--yellow);
+    color: var(--white2);
     border-radius: 40px;
     font-weight: 500;
     letter-spacing: 1px;
@@ -109,17 +120,30 @@ header ul li a
 }
 
 .content .imgBox
-{
+{   
+    position: relative;
     width: 600px;
     display: flex;
-    justify-content: flex-end;
-    padding-right: 50px;
-    margin-top: 50px;
+    justify-content: center;
+    align-items: center;
+}
+
+.content .circle
+{
+    position: absolute;
+    width: 550px;
+    height: 550px;
+    background: #FFBA5C;
+    border-radius: 100%;
+
 }
 
 .content .imgBox img
-{
-    max-width: 540px;
+{   
+    position: relative;
+    z-index: 1;
+    width: 434px;
+    max-width: 434px;
 }
 
 .thumb
@@ -152,9 +176,8 @@ header ul li a
 .sci
 {
     position: absolute;
-    top: 50%;
+    top: 35%;
     right: 30px;
-    transform: translateY(-50%);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -170,17 +193,23 @@ header ul li a
 {
     display: inline-block;
     margin: 5px 0;
-    transform: scale(0.6);
+    width: 50px;
+    height: 50px;
+    background:var(--black2);
+    color: var(--white2);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
 }
 
-.circle
+.sci li a .fa
 {
-    position: absolute;
-    top: 130px;
-    left: 780px;
-    width: 584px;
-    height: 584px;
-    background-color: #FFBA5C;
-    border-radius: 100%;
+    font-size: 1.2emx;
+}
 
+.sci li a:hover
+{
+    background: var(--yellow);
 }
