@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" integrity="sha512-5A8nwdMOWrSz20fDsjczgUidUBR8liPYU+WymTZP1lmY9G6Oc7HlZv156XqnsgNUzTyMefFTcsFH/tnJE/+xBg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 <body>
     <section>
+        <div class="square"></div>
         <header>
             <a href="#"><img src="./assets/logo.png" class="logo"></a>
             <ul class="navigation">
@@ -21,35 +22,60 @@
         <div class="content">
             <div class="textBox">
                 <h2>It's not just Coffee<br>It's <span>Hollywood</span></h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Placeat amet earum aut sunt quis accusamus, ex aperiam quod rerum repellat quia error expedita voluptatibus, obcaecati dolorem qui nobis, ullam ad!</p>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nemo nesciunt iure accusantium, vitae ratione pariatur eum magnam odit molestiae libero facilis esse atque sint autem, officia dolor aliquid quibusdam! Ipsum vel ipsa quisquam unde recusandae qui ullam, neque maiores consequatur perferendis iure nulla excepturi aut iusto eaque facere voluptatibus, iste voluptates incidunt accusamus eius reprehenderit! Pariatur, sed eaque? Eum, necessitatibus.
+                </p>
                 <a href="#">Learn More</a> 
             </div>
             <div class="imgBox">
-                <img src="/assets/img1.png" class="coffee">
-                <div class="circle"></div>
+                <img src="./assets/img1.png" class="coffee">
+                <div class="circle">
+                    <div class="circle2" id="circle2"></div>
+                </div>
             </div>
         </div>
         <ul class="thumb">
-            <li><img src="/assets/thumbnail1.png" onclick="imgSlider('/assets/img1.png');changeCircleColor('#FFBA5C')"></li>
-            <li><img src="/assets/thumbnail2.png" onclick="imgSlider('/assets/img2.png');changeCircleColor('#967969') "></li>
-            <li><img src="/assets/thumbnail3.png" onclick="imgSlider('/assets/img3.png');changeCircleColor('#bdab98')"></li>
-            <li><img src="/assets/thumbnail4.png" onclick="imgSlider('/assets/img4.png');changeCircleColor('#b39f7a')"></li>
+            <li><img src="./assets/thumbnail1.png" onclick="animation();imgSlider('./assets/img1.png');changeCircleColor('#FFC82C');">
+                <div class=backdrop1></div></li>
+            <li><img src="./assets/thumbnail2.png" onclick="animation();imgSlider('./assets/img2.png');changeCircleColor('#967969');">
+                <div class=backdrop2></div></li>
+            <li><img src="./assets/thumbnail3.png" onclick="animation();imgSlider('./assets/img3.png');changeCircleColor('#bdab98');">
+                <div class=backdrop3></div></li>
+            <li><img src="./assets/thumbnail4.png" onclick="animation();imgSlider('./assets/img4.png');changeCircleColor('#b39f7a');">
+                <div class=backdrop4></div></li>
         </ul>
         <ul class="sci">
             <li><a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
             <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
             <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
         </ul>
+
     </section>
 
     <script type="text/javascript">
         function imgSlider(anything){
             document.querySelector('.coffee').src = anything;
         }
-        function changeCircleColor(background){
-            const circle = document.querySelector('.circle');
-            circle.style.background = background;
+        function changeCircleColor(backgroundColor){
+            const circle = document.querySelector('.circle2');
+            circle.style.backgroundColor = backgroundColor;
+        }
+        function animation()
+        {
+            var elm = document.getElementById('thumb');
+            elm.style.animation='fill 15s ease-in-out 1';
+            var newone = elm.cloneNode(true);
+            elm.parentNode.replaceChild(newone, elm);
+        }
+        function animation(){
+            let circle2 = document.querySelector(".circle2")
+
+            circle2.style.animation = "none"
+
+            requestAnimationFrame(() => {
+                circle2.style.animation = "fill 3s ease-in-out 1";
+            });
         }
     </script>
 </body>
 </html>
+
