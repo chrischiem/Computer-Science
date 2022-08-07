@@ -44,6 +44,7 @@ header .logo {
 header ul {
   position: relative;
   display: flex;
+  justify-content: center;
 }
 
 header ul li {
@@ -141,11 +142,10 @@ header ul li a {
   transform: translateY(-15px);
 }
 .thumb li img {
-  max-width: 80px;
   border-radius: 50%;
   box-shadow: 0px 0px 0px 10px #d5d4d1;
-  width: 80px;
-  height: 80px;
+  width: 60px;
+  height: 60px;
 }
 
 .sci {
